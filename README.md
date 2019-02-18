@@ -1,9 +1,9 @@
 # tinyfsm
 
-tiny finite state machine depends on q.js
-
+Tiny finite state machine depends on q.js, here is an example:
 
 ```
+/////////////////////////////////////////// simple test logic:
 var q4web=require('q4web')();
 var {QOK,Q,os}=q4web;
 var GetMemoryUsage = ()=>{
@@ -23,7 +23,7 @@ var GetMemInfo = ()=>{
 	}
 	return gMemoryUsage;
 }
-///////////////////////////////////////////
+/////////////////////////////////////////// exec the tinyfsm:
 require('./tinyfsm')(lgc,`
 RoundStart        .OK => ShowInfo        //
 ShowInfo          .OK => RoundEnd        // oper when round end
