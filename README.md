@@ -28,7 +28,5 @@ require('./tinyfsm')(lgc,`
 RoundStart        .OK => ShowInfo        //
 ShowInfo          .OK => RoundEnd        // oper when round end
 RoundEnd          .OK => RoundStart      // let do next round
-`).fail(err=>err).done(rst=>{
-	console.log('tinyfsm.rst=',rst);
-});
+`).fail(err=>err).done(rst=>console.log('tinyfsm.rst=',rst));
 ```
