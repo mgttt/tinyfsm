@@ -24,6 +24,15 @@ var GetMemInfo = ()=>{
 	return gMemoryUsage;
 }
 /////////////////////////////////////////// exec the tinyfsm:
+var lgc={
+	RoundStart:()=>Q({STS:'OK'})
+	,RoundEnd:()=>Q.delay(111).then(()=>QOK())
+	,ShowInfo(){
+		console.log('GetMemInfo()',GetMemInfo());
+		return Q({STS:'OK'})
+	}
+};
+
 require('./tinyfsm')(lgc,`
 RoundStart        .OK => ShowInfo        //
 ShowInfo          .OK => RoundEnd        // oper when round end
